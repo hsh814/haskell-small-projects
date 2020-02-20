@@ -15,7 +15,7 @@ spiralValue n (i, j) =
     in
         if i <= j
             then start + (i + j - 2 * m)
-            else start + 4 * (n - 1) - (i + j + 2 * m)
+            else start + 4 * (n - 1 - 2 * m) - (i + j - 2 * m)
 
 generateRow :: Int -> Int -> [Int]
 generateRow n m = [(spiralValue n (m, k)) | k <- [0..n-1]]
