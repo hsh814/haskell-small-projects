@@ -27,7 +27,8 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Lib,
+      SpiralMatrix
   other-modules:
       Paths_haskell_spiral_matrix
   hs-source-dirs:

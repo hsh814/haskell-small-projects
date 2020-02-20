@@ -19,7 +19,7 @@ output>
 13 12 11 10 9
 ```
 
-## Implementation
+## How to make spiral matrix?
 
 ![calculation](./calculation.jpg)
 
@@ -30,4 +30,23 @@ output:
 ```
 *Main> spiral 5
 [[0,1,2,3,4],[15,20,21,22,5],[14,31,32,23,6],[13,30,29,24,7],[12,11,10,9,8]]
+```
+
+## Implementation of main
+
+- [Main.hs](./app/Main.hs)
+
+
+## Let's build and run it
+
+```
+$ stack build
+$ stack exec haskell-spiral-matrix-exe
+Input n: 
+5
+0  1  2  3  4  
+15 20 21 22 5  
+14 31 32 23 6  
+13 30 29 24 7  
+12 11 10 9  8  
 ```
