@@ -57,23 +57,33 @@ problem8 (x1:x2:xs) =
 
 
 -- Pack consecutive duplicates of list elements into sublists. 
-takeElem :: (Eq a) => a -> [a] -> ([a], [a])
-takeElem x [] = ([], [])
-takeElem x (x1:xs) = if x == x1 
-    then (x1 : fst (takeElem x xs), xs)
-    else ([], xs)
+countDup :: (Eq a) => a -> [a] -> Int
+countDup x [] = 0
+countDup x (n:ns) = if x == n
+    then 1 + countDup x ns
+    else 0
 
 problem9 :: (Eq a) => [a] -> [[a]]
 problem9 [] = []
 problem9 [x] = [[x]]
-problem9 (x:xs) =
+problem9 xs =
     let 
-        (newGroup, leftList) = takeElem x xs
+        num = countDup (head xs) xs
+        newGroup = drop num xs
     in 
-        newGroup : (problem9 leftList)
+        (take num xs) : problem9 newGroup
 
 
-
+-- Run-length encoding of a list.
+problem10 :: (Eq a) => [a] -> [(Int, a)]
+problem10 [] = []
+problem10 [x] = [(1, x)]
+problem10 xs =
+    let
+        num = countDup (head xs) xs
+        newGroup = drop num xs
+    in 
+        (num, head xs) : problem10 newGroup
 
 
 
