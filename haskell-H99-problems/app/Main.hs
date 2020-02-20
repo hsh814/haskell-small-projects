@@ -1,6 +1,3 @@
-module Main where
+import Q01toQ10
 
-import Lib
 
-main :: IO ()
-main = someFunc

@@ -1,9 +1,4 @@
-module Lib
-    ( someFunc
-    , problem1
-    , problem2
-    , problem3
-    ) where
+module Q01toQ10 where
 
 someFunc :: IO ()
 someFunc = putStrLn "someFunc"
@@ -24,3 +19,12 @@ problem2 (n:ns) = problem2 ns
 problem3 :: [a] -> Int -> a
 problem3 (n:ns) 1 = n
 problem3 (n:ns) m = problem3 ns (m-1)
+
+-- Find the number of elements of a list
+problem4 :: [a] -> Int
+problem4 xs = count xs 0
+
+count :: [a] -> Int -> Int
+count [] n = n
+count (x:xs) n = count xs (n+1)
+

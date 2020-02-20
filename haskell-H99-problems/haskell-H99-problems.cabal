@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 541dfcf9c86252f5e73d9a1c2ca2eb8c1dd373135cfded04f21f568a0e1a95ae
+-- hash: 9fc1eca886634c40dd225cac3a9477b199dd4d77fc3b751e2b916ebd2f9a539d
 
 name:           haskell-H99-problems
 version:        0.1.0.0
@@ -27,7 +27,7 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Q01toQ10
   other-modules:
       Paths_haskell_H99_problems
   hs-source-dirs:
