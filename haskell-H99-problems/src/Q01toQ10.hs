@@ -28,3 +28,52 @@ count :: [a] -> Int -> Int
 count [] n = n
 count (x:xs) n = count xs (n+1)
 
+-- reverse list
+problem5 :: [a] -> [a]
+problem5 [] = []
+problem5 (x:xs) = (problem5 xs) ++ [x] 
+
+-- Find out whether a list is a palindrome.
+problem6 :: (Eq a) => [a] -> Bool
+problem6 list = list == (reverse list)
+
+-- Flatten a nested list
+data NestedList a = Elem a | List [NestedList a]
+
+problem7 :: NestedList a -> [a]
+problem7 (Elem e) = [e]
+problem7 (List (nl:nls)) = problem7 nl ++ problem7 (List nls)
+problem7 (List []) = []
+
+
+-- Eliminate consecutive duplicates of list elements.
+problem8 :: (Eq a) => [a] -> [a]
+problem8 [] = []
+problem8 [x] = [x]
+problem8 (x1:x2:xs) =
+    if x1 == x2
+        then problem8 (x2:xs)
+        else x1 : problem8 (x2:xs) 
+
+
+-- Pack consecutive duplicates of list elements into sublists. 
+takeElem :: (Eq a) => a -> [a] -> ([a], [a])
+takeElem x [] = ([], [])
+takeElem x (x1:xs) = if x == x1 
+    then (x1 : fst (takeElem x xs), xs)
+    else ([], xs)
+
+problem9 :: (Eq a) => [a] -> [[a]]
+problem9 [] = []
+problem9 [x] = [[x]]
+problem9 (x:xs) =
+    let 
+        (newGroup, leftList) = takeElem x xs
+    in 
+        newGroup : (problem9 leftList)
+
+
+
+
+
+
