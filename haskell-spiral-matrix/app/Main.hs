@@ -3,11 +3,15 @@ import Data.List
 
 
 main = do
-    args <- getArgs
+    --args <- getArgs
+    putStrLn "input n: "
+    input <- getLine
     let 
-        n = show $ head args
+        n :: Int
+        n = read $ input
         matrix = spiral n n
-    mapM_ printList $ foldr (:) [] $ filterRow matrix
+        list = [[(filterRow r matrix)] | r <- [1..n]]
+    mapM_ printList list
 
 data Direction = Right' | Down | Left' | Up
     deriving (Show, Eq)
