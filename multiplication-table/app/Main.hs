@@ -1,6 +1,18 @@
 module Main where
 
-import Lib
+import MultiplicationTable
 
-main :: IO ()
-main = someFunc
+main = do
+    putStrLn "Maximum number? "
+    maxStr <- getLine
+    putStrLn "Split interval? "
+    splitStr <- getLine
+    let 
+        maxNum = read maxStr
+        splitNum = read splitStr
+    mapM_ printTable $ generateTable maxNum splitNum
+
+printTable :: [String] -> IO ()
+printTable strs = do
+    mapM_ putStr strs
+    putStr "\n"
