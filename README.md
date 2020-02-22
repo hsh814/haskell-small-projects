@@ -4,6 +4,7 @@
 ## list
 - [haskell-H99-problems](#haskell-H99-problems)
 - [haskell-spiral-matrix](#haskell-spiral-matrix)
+- [multiplication-table](#multiplication-table)
 
 ## [haskell-H99-problems](./haskell-H99-problems)
 
@@ -38,7 +39,7 @@ Input n:
 
 # [multiplication-table](./multiplication-table)
 
-하스켈로 구구단 구현
+- 하스켈로 구구단 구현
 
 ```
 $ git clone https://github.com/hsh814/haskell-small-projects.git
