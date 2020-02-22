@@ -13,8 +13,8 @@ showFixedSpaceNum n maxSpace =
     (replicate (maxSpace - (length (show n))) ' ') ++ show n
 
 showMulti :: Int -> Int -> Int -> String
-showMulti row col maxSpace = showFixedSpaceNum row maxSpace ++ "x" ++ 
-    showFixedSpaceNum col maxSpace ++ "=" ++ 
+showMulti row col maxSpace = showFixedSpaceNum col maxSpace ++ "x" ++ 
+    showFixedSpaceNum row maxSpace ++ "=" ++ 
     showFixedSpaceNum (row * col) maxSpace 
 
 showRow :: Int -> Int -> [Int] -> String
