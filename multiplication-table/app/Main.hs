@@ -14,5 +14,5 @@ main = do
 
 printTable :: [String] -> IO ()
 printTable strs = do
-    mapM_ putStr strs
+    mapM_ putStrLn strs
     putStr "\n"
