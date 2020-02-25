@@ -21,7 +21,13 @@ problem11 xs =
         else Multiple num (head xs) : problem11 newGroup
 
 -- Decode a run-length encoded list.
+decode :: Duplicate a -> [a]
+decode (Single x) = [x]
+decode (Multiple n x) = replicate n x
+
 problem12 :: (Eq a) => [Duplicate a] -> [a]
-problem12 
+problem12 ds = foldl (\x y -> x ++ decode y) [] ds 
 
-
+-- Duplicate the elements of a list.
+problem14 :: [a] -> [a]
+problem14 ds = foldl (\x y -> x ++ replicate 2 y) [] ds
