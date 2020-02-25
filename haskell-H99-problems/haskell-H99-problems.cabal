@@ -28,7 +28,8 @@ source-repository head
 library
   exposed-modules:
       Q01toQ10,
-      Q11toQ20
+      Q11toQ20,
+      Q21toQ28
   other-modules:
       Paths_haskell_H99_problems
   hs-source-dirs:

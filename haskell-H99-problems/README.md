@@ -10,4 +10,6 @@
 
 - [link](https://wiki.haskell.org/99_questions/11_to_20)
 
+## [Questions 21 to 28: Lists again](./src/Q21toQ28.hs)
 
+- [link](https://wiki.haskell.org/99_questions/21_to_28)
