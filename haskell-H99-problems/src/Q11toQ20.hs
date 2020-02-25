@@ -46,17 +46,25 @@ problem16 ns n = dropEvery ns n len
             then take (n - 1) ns ++ (drop n ns)
             else take (n - 1) ns ++ (dropEvery (drop n ns) n (len - n))
 
+-- Split a list into two parts; the length of the first part is given. 
+problem17 :: [a] -> Int -> ([a], [a])
+problem17 [] _ = ([], [])
+problem17 ns len = (take len ns, drop len ns)
+
     
-    
-    
+-- Extract a slice from a list. 
+problem18 :: [a] -> Int -> Int -> [a]
+problem18 xs start end = take (end - start + 1) $ drop (start-1) xs
 
 
+-- Rotate a list N places to the left.
+problem19 :: [a] -> Int -> [a]
+problem19 xs n = drop n xs ++ (take n xs)
 
 
-
-
-
-
+-- Remove the K'th element from a list. 
+problem20 :: Int -> [a] -> (a, [a])
+problem20 n xs = (xs !! (n-1), take (n-1) xs ++ (drop n xs))
 
 
 
