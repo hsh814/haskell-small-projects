@@ -31,3 +31,33 @@ problem12 ds = foldl (\x y -> x ++ decode y) [] ds
 -- Duplicate the elements of a list.
 problem14 :: [a] -> [a]
 problem14 ds = foldl (\x y -> x ++ replicate 2 y) [] ds
+
+-- Replicate the elements of a list given number of times
+problem15 :: [a] -> Int -> [a]
+problem15 ds n = foldl (\x y -> x ++ replicate n y) [] ds
+
+-- Drop every N'th element from a list. 
+problem16 :: [a] -> Int -> [a]
+problem16 [] _ = []
+problem16 ns n = dropEvery ns n len
+    where
+        len = length ns
+        dropEvery ns n len = if n >= len
+            then take (n - 1) ns ++ (drop n ns)
+            else take (n - 1) ns ++ (dropEvery (drop n ns) n (len - n))
+
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+

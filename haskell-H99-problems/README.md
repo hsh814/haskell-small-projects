@@ -6,3 +6,8 @@
 
 - [link](https://wiki.haskell.org/99_questions/1_to_10)
 
+## [problem 11 to 20: Lists, continued](./src/Q11toQ20.hs)
+
+- [link](https://wiki.haskell.org/99_questions/11_to_20)
+
+
